@@ -15,15 +15,13 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: shaikmustafa/clientapp:dbimage
+        image: rajesh0250/clientapp-db
         ports:
         - containerPort: 80
           name: web
         volumeMounts:
         - name: www
           mountPath: /usr/share/nginx/html
-      imagePullSecrets:
-            - name: dockerhub-secret
   volumeClaimTemplates:
   - metadata:
       name: www
